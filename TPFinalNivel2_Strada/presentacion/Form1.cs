@@ -108,7 +108,7 @@ namespace presentacion
                 lblPrecioDb.Text="$ "+ seleccionado.Precio.ToString("#.##");
                 lblDescripcion.Text = "Descripcion: ";
                 txtDescripcionDb.Text = seleccionado.Descripcion;
-                //lblDescripcionDb.Text=;
+              
                 
 
             }
