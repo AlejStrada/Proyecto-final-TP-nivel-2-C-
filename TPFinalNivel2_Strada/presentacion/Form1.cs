@@ -100,10 +100,16 @@ namespace presentacion
             {
                 Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
                 helper.cargarImagen(seleccionado.ImagenUrl, pcbImagen);
-                lblNombre.Text="Nombre: "+ seleccionado.Nombre.ToUpper();
-                lblMarca.Text ="Marca: " + seleccionado.Marca.Descripcion.ToUpper();
-                lblDescripcion.Text = "Descripcion: " + seleccionado.Descripcion;
-                lblPrecio.Text= "Precio: $"+ seleccionado.Precio.ToString("#.##");
+                lblNombre.Text = "Nombre: ";
+                lblNombreDb.Text=seleccionado.Nombre.ToUpper();
+                lblMarca.Text ="Marca: " ;
+                lblMarcaDb.Text = seleccionado.Marca.Descripcion.ToUpper();
+                lblPrecio.Text = "Precio: ";
+                lblPrecioDb.Text="$ "+ seleccionado.Precio.ToString("#.##");
+                lblDescripcion.Text = "Descripcion: ";
+                txtDescripcionDb.Text = seleccionado.Descripcion;
+                //lblDescripcionDb.Text=;
+                
 
             }
         }
@@ -261,6 +267,11 @@ namespace presentacion
                     MessageBox.Show("Ingrese solo numeros");
                     txtRangoPrecios.Clear();
                     return; //el return corta el evento
+                }
+                if (validarNumero.requeridos(txtRangoPrecios.Text.ToString()))
+                {
+                    MessageBox.Show("Debe ingresar un importe para realizar la busqueda avanzada");
+                    return;
                 }
                
                 dgvDatos.DataSource = filtroNegocio.filtroPrecios(rangoPrecios,filtroPrecios);

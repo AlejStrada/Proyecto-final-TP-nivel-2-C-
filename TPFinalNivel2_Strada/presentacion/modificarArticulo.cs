@@ -23,6 +23,7 @@ namespace presentacion
         private OpenFileDialog archivo = null;
         private HelperPresentacion helper = new HelperPresentacion();
         private Validar validaciones = new Validar();
+        
         public frmAgregar()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace presentacion
         {
             CategoriaNegocio Categoria= new CategoriaNegocio();
             MarcaNegocio Marca = new MarcaNegocio();
+           
             try
             {
                 //precarga de desplegables si hay q agregar un articulo nuevo
@@ -183,9 +185,13 @@ namespace presentacion
              }
         }
 
-        private void txtImagen_Enter(object sender, EventArgs e)
-        {
-            txtImagen.Clear();
-        }
+        //private void txtImagen_Enter(object sender, EventArgs e)
+        //{
+        //    if ((validaciones.requeridos(txtImagen.Text.ToString())))
+        //    {
+        //      txtImagen.Clear();
+        //    }
+            
+       // }
     }
 }

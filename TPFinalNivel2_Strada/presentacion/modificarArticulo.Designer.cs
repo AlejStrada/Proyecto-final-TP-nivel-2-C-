@@ -163,7 +163,7 @@
             this.txtImagen.TabIndex = 6;
             this.txtImagen.Text = "Inserte la URL de la  imagen o seleccionela de su PC";
             this.txtImagen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtImagen.Enter += new System.EventHandler(this.txtImagen_Enter);
+            //this.txtImagen.Enter += new System.EventHandler(this.txtImagen_Enter);
             this.txtImagen.Leave += new System.EventHandler(this.txtImagen_Leave);
             // 
             // txtDescripcion
